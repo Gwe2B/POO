@@ -1,0 +1,16 @@
+package root;
+
+import root.Personne;
+
+public class Program {
+	public static void main(String[] args)
+	{
+		System.out.println("-- Program Start --");
+		
+		Personne hPersonne1 = new Personne("GUIRAUD", "Gwenaël", 23, 5, 2000, 43, "Pascal Paoli", 20620, "Biguglia");
+		Personne hPersonne2 = new Personne();
+		Personne hPersonne3 = new Personne();
+		
+		System.out.println("-- Program Start --");
+	}
+}

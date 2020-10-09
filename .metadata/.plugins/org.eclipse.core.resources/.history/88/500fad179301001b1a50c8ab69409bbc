@@ -1,0 +1,20 @@
+package root;
+
+public class Secretaire extends Employe {
+	private Manager[] mManager;
+	
+	public Secretaire(Employe hEmploye, Manager[] hManagers)
+	{
+		super(hEmploye);
+		
+		for(int i = 0; i < 5 && i < hManagers.length; i++)
+		{
+			this.mManager[i] = hManagers[i];
+		}
+	}
+	
+	public void augmenterSalaire(float percentage)
+	{
+		super.augmenteSalaire((float) (percentage + 0.1*mManager.length));
+	}
+}

@@ -1,0 +1,5 @@
+package root;
+
+public class Employe extends Personne {
+
+}

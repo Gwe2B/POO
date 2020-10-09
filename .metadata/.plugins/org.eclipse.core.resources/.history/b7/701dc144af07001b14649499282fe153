@@ -1,0 +1,17 @@
+package root.dim3;
+
+public class Cylindre extends Forme3D {
+
+	@Override
+	public double getSurface() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public double getVolume() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

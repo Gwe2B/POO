@@ -1,0 +1,44 @@
+package exercice2;
+
+public class Entier {
+	private int valeur;
+	private int bInf;
+	private int bSup;
+	
+	public Entier(int bInf, int bSup)
+	{
+		this.bInf = bInf;
+		this.bSup = bSup;
+	}
+	
+	public Entier(int entier, int bInf, int bSup)
+	{
+		if(entier >= bInf && entier < bSup)
+		{
+			this.bInf = bInf;
+			this.bSup = bSup;
+			this.valeur = entier;
+		}
+		else
+			System.err.println("L'entier ne correspond pas aux bornes spécifié");
+	}
+
+	/*** GETTEURS ***/
+	public int getbSup() 
+	{ return bSup; }
+
+	public int getbInf() 
+	{ return bInf; }
+	
+	public int getEntier()
+	{ return this.valeur; }
+	
+	/*** SETTEURS ***/
+	public void setEntier(int val)
+	{
+		if(val >= this.bInf && val <= this.bSup)
+			this.valeur = val;
+		else
+			System.err.println("La valeur spécifié n'est pas comprise entre les bornes de l'entier");
+	}
+}

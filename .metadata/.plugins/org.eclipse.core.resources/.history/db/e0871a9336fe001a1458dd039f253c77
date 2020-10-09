@@ -1,0 +1,35 @@
+package root;
+
+public class De {
+	private int nbFaces;
+	private String nom;
+	
+	public De(String deName)
+	{
+		this(6, deName);
+	}
+
+	public De(int faces, String deName)
+	{
+		this.setNbFaces(faces);
+		
+		if(deName.length() > 0 && deName != null)
+			this.nom = deName;
+		else
+			System.err.println("Le nom du dé ne peut etre ni null ni une chaine vide");
+	}
+	
+	public String getNom()
+	{ return this.nom; }
+	
+	public int getNbFaces()
+	{ return this.nbFaces; }
+	
+	public void setNbFaces(int faces)
+	{
+		if(faces >= 3 && faces <= 120)
+			this.nbFaces = faces;
+		else
+			System.err.println("Le nombre de faces est invalide");
+	}
+}

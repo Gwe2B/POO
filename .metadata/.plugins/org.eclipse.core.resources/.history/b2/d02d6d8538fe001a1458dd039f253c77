@@ -1,0 +1,27 @@
+package root;
+
+public class TestDe {
+	public static void main(String[] args)
+	{
+		De hDe6 = new De(null);
+		De hDe16 = new De(16, null);
+		
+		System.out.println(hDe6.getNom());
+		System.out.println(hDe6.getNbFaces());
+		System.out.println("Réalisation de 10 lancer");
+		
+		for(int i = 0; i < 10; i++)
+			System.out.println("Lancer " + i + ": " + hDe6.lancer());
+		
+		System.out.println("Meilleur de 30 lancers: " + hDe6.lancer(30));
+		
+		System.out.println(hDe16.getNom());
+		System.out.println(hDe16.getNbFaces());
+		System.out.println("Réalisation de 10 lancer");
+		
+		for(int i = 0; i < 10; i++)
+			System.out.println("Lancer " + i + ": " + hDe16.lancer());
+		
+		System.out.println("Meilleur de 30 lancers: " + hDe16.lancer(30));
+	}
+}

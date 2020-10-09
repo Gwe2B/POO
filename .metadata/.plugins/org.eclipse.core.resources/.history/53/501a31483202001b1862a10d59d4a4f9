@@ -1,0 +1,48 @@
+package root;
+
+/**
+ * @author  Gwenaël
+ * @date    28/09/2020
+ * @version 1
+ */
+
+public class Manager extends Employe {
+	private Secretaire mSecretaire = null;
+	
+	/**
+	 * Constructeur
+	 * @param hEmploye
+	 */
+	public Manager(Employe hEmploye)
+	{ super(hEmploye); }
+	
+	/*** instance methods ***/
+	/**
+	 * Augmente le salaire avec majoration d'ancienete
+	 * @param percentage pourcentage d'augmentation
+	 */
+	public void augmenterSalaire(float percentage)
+	{
+		int anciennete = super.calculAnnuite();
+		super.augmenteSalaire((float) (percentage + 0.5*anciennete));
+	}
+	
+	/**
+	 * Changement de secretaire
+	 * @param hSecretaire nouvelle secretaire
+	 */
+	public void changeSecretaire(Secretaire hSecretaire)
+	{
+		if(this.mSecretaire != null)
+		{
+			this.mSecretaire.delManager(this);
+			this.mSecretaire = hSecretaire;
+			this.mSecretaire.addManager(this);
+		}
+		else
+		{
+			this.mSecretaire = hSecretaire;
+			this.mSecretaire.addManager(this);
+		}
+	}
+}

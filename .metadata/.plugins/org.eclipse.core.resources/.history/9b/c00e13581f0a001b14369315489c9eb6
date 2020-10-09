@@ -1,0 +1,22 @@
+package root;
+
+/**
+ * 
+ * @author Gwenaël
+ * @date 29/09/2020
+ * @version 1
+ *
+ */
+
+public class Program {
+
+	/**
+	 * Main function
+	 * @param args
+	 */
+	public static void main(String[] args)
+	{
+		Forme[] hFormes = {;
+	}
+
+}

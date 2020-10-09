@@ -1,0 +1,24 @@
+package root;
+
+public class Manager extends Employe {
+	private Secretaire mSecretaire;
+	
+	public Manager(Employe hEmploye, Secretaire hSecretaire)
+	{
+		super(hEmploye);
+		this.mSecretaire = hSecretaire;
+	}
+	
+	public void augmenterSalaire(float percentage)
+	{
+		int anciennete = super.calculAnnuite();
+		super.augmenteSalaire((float) (percentage + 0.5*anciennete));
+	}
+	
+	public void changeSecretaire(Secretaire hSecretaire)
+	{
+		mSecretaire.delManager(this);
+		mSecretaire = hSecretaire;
+		mSecretaire.addManager(this);
+	}
+}

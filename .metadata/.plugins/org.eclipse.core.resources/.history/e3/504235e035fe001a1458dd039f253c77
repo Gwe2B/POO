@@ -1,0 +1,12 @@
+package root;
+
+public class TestDe {
+	public static void main(String[] args)
+	{
+		De hDe6 = new De();
+		De hDe16 = new De(16);
+		
+		System.out.println(hDe6.getNbFaces());
+		System.out.println(hDe16.getNbFaces());
+	}
+}

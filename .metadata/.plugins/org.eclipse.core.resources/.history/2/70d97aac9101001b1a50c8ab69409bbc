@@ -1,0 +1,11 @@
+package root;
+
+public class Manager extends Employe {
+	private Secretaire secretaire;
+	
+	public Manager(Employe hEmploye, Secretaire hSecretaire)
+	{
+		super(hEmploye);
+		this.secretaire = secretaire;
+	}
+}
