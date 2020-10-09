@@ -37,6 +37,34 @@ public class Cylindre extends Forme3D {
 	public void setHauteur(double hauteur)
 	{ this.hauteur = hauteur; }
 	
+	/*** Inherited methods from Object ***/
+	
+	@Override
+	public String toString()
+	{
+		return "La forme " + this.identifiant + " est un cylindre de rayon " + 
+				this.rayon + " et de hauteur " + this.hauteur;
+	}
+	
+	@Override
+	public boolean equals(Object obj)
+	{
+		boolean equal;
+		
+		if(this == obj)
+			equal = true;
+		else if(obj == null || this.getClass() != obj.getClass())
+			equal = false;
+		else
+		{
+			Cylindre hCylindre = (Cylindre)obj;
+			equal = this.rayon == hCylindre.rayon &&
+					this.hauteur == hCylindre.hauteur;
+		}
+		
+		return equal;
+	}
+	
 	/*** Instance methods ***/
 	
 	@Override
