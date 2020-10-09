@@ -1,5 +1,0 @@
-package root;
-
-public class Manager extends Employe {
-
-}

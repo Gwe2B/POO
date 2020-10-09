@@ -1,3 +1,0 @@
-INDEX VERSION 1.131+C:\Users\Gwen\OneDrive\Documents\L3\POO\.metadata\.plugins\org.eclipse.jdt.core
-560946946.index
-3629282067.index
