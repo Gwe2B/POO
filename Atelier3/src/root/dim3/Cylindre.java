@@ -53,7 +53,7 @@ public class Cylindre extends Forme3D {
 		
 		if(this == obj)
 			equal = true;
-		else if(obj == null || this.getClass() != obj.getClass())
+		else if(obj == null || obj instanceof Cylindre)
 			equal = false;
 		else
 		{

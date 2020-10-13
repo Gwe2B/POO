@@ -137,7 +137,7 @@ public class Personne{
 		
 		if(this == obj)
 			eval = true;
-		else if(obj == null || this.getClass() != obj.getClass())
+		else if(obj == null || obj instanceof Personne)
 			eval = false;
 		else
 		{

@@ -65,7 +65,7 @@ public class Cercle extends Forme2D
 		
 		if(this == obj)
 			equal = true;
-		else if(obj == null || this.getClass() != obj.getClass())
+		else if(obj == null || obj instanceof Cercle)
 			equal = false;
 		else
 		{
