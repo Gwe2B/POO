@@ -3,6 +3,7 @@ package root.exo1;
 public class ConcreteStackArray implements AStack
 {
 /* --------------------------- Instance attributes -------------------------- */
+    private Object[] pile;
 
 /* ------------------- AStack interface inherited methods ------------------- */
     @Override

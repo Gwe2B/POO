@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class ConcreteStack implements AStack {
 /* --------------------------- Instance attributes -------------------------- */
-    ArrayList<Object> pile = new ArrayList<Object>();
+    private ArrayList<Object> pile = new ArrayList<Object>();
 
 /* ------------------- AStack interface inherited methods ------------------- */
     @Override
