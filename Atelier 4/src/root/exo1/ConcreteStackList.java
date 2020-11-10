@@ -2,9 +2,22 @@ package root.exo1;
 
 import java.util.ArrayList;
 
-public class ConcreteStack implements AStack {
+public class ConcreteStackList implements AStack {
 /* --------------------------- Instance attributes -------------------------- */
-    private ArrayList<Object> pile = new ArrayList<Object>();
+    private ArrayList<Object> pile;
+
+    /**
+     * Constructor by default
+     */
+    public ConcreteStackList()
+    { this.pile = new ArrayList<Object>(); }
+
+    /**
+     * Constructor
+     * @param arr ArrayList for initialize the pile
+     */
+    public ConcreteStackList(ArrayList<Object> arr)
+    { this.pile = arr; }
 
 /* ------------------- AStack interface inherited methods ------------------- */
     @Override
@@ -37,4 +50,14 @@ public class ConcreteStack implements AStack {
         return retour;
     }
     
+/* ------------------------- Object inherited method ------------------------ */
+    @Override
+    public String toString()
+    {
+        String retour = "{";
+        for(int i = 0; i < this.pile.size(); i++)
+            retour += this.pile.get(i).toString() + ", ";
+
+        return retour + "}";
+    }
 }
