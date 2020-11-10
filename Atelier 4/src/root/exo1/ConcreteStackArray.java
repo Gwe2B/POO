@@ -1,4 +1,4 @@
-package root;
+package root.exo1;
 
 public class ConcreteStackArray implements AStack
 {
