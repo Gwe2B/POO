@@ -2,43 +2,59 @@ package root.exo1;
 
 public class ConcreteStackArray implements AStack
 {
+/* ----------------------------- Class Constants ---------------------------- */
+    public static final int STACK_SIZE = 100;
+
 /* --------------------------- Instance attributes -------------------------- */
-    private Object[] pile = {};
+    private Object[] pile;
+    private int endStackPtr;
 
     /**
      * Constructor by default
      */
-    public ConcreteStackArray() {}
+    public ConcreteStackArray()
+    { this(new Object[ConcreteStackArray.STACK_SIZE]); }
 
     /**
      * Constructor
      * @param arr Array for initialize the pile
      */
     public ConcreteStackArray(Object[] arr)
-    { this.pile = arr; }
+    {
+        int i = 0;
+        boolean flag = true;
+
+        if(arr.length == ConcreteStackArray.STACK_SIZE)
+        {
+            this.pile = arr;
+            while(flag && i < ConcreteStackArray.STACK_SIZE)
+            {
+                if(this.pile == null)
+                {
+                    this.endStackPtr = i - 1;
+                    flag = false;
+                }
+                
+                i++;
+            }
+        }
+        else
+            System.err.println("The stack size must be of " +
+                ConcreteStackArray.STACK_SIZE + "element!");
+    }
 
 /* ------------------- AStack interface inherited methods ------------------- */
     @Override
     public boolean isEmpty()
-    { return this.pile.length == 0; }
+    { return this.endStackPtr == 0 && this.pile[this.endStackPtr] == null; }
 
     @Override
     public void push(Object obj)
     {
-        if(!this.isEmpty())
-        {
-            Object[] buff = new Object[this.pile.length + 1];
-            for(int i = 0; i < this.pile.length; i++)
-                buff[i] = this.pile[i];
-
-            buff[this.pile.length] = obj;
-            this.pile = buff;
-        }
+        if(this.endStackPtr < ConcreteStackArray.STACK_SIZE)
+            this.pile[this.endStackPtr++] = obj;
         else
-        {
-            this.pile = new Object[1];
-            this.pile[0] = obj;
-        }
+            System.err.println("The stack can't have another element!");
     }
 
     @Override
@@ -46,7 +62,7 @@ public class ConcreteStackArray implements AStack
     {
         Object retour = null;
         if(!this.isEmpty())
-            retour = this.pile[this.pile.length - 1];
+            retour = this.pile[this.endStackPtr];
 
         return retour;
     }
@@ -56,13 +72,7 @@ public class ConcreteStackArray implements AStack
     {
         Object retour = this.peek();
         if(retour != null)
-        {
-            Object[] buff = new Object[this.pile.length - 1];
-            for(int i = 0; i < (this.pile.length - 1); i++)
-                buff[i] = this.pile[i];
-                
-            this.pile = buff;
-        }
+            this.pile[this.endStackPtr--] = null;
 
         return retour;
     }
