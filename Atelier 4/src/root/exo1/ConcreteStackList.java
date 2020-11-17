@@ -43,8 +43,7 @@ public class ConcreteStackList implements AStack {
         Object retour = null;
         if(!this.isEmpty())
         {
-            retour = this.peek();
-            pile.remove(pile.size() - 1);
+            retour = pile.remove(pile.size() - 1);
         }
 
         return retour;
