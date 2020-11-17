@@ -9,10 +9,10 @@ package exercice1;
 public class DeMemoire extends De {
 	private int lastLaunch = 0;
 	
-	public DeMemoire(String deName)
+	public DeMemoire(String deName) throws IllegalArgumentException
 	{ super(deName); }
 	
-	public DeMemoire(int faces, String deName)
+	public DeMemoire(int faces, String deName) throws IllegalArgumentException
 	{ super(faces, deName);	}
 	
 	public int lancer()

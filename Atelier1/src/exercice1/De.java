@@ -3,7 +3,7 @@ package exercice1;
 import java.util.*;
 
 /**
- * @author Gwenaël
+ * @author GwenaÃ«l
  * @date 24/09/2020
  */
 
@@ -22,10 +22,21 @@ public class De {
 	private String nom;
 	
 	/*** CONSTRUCTEURS ***/
-	public De(String deName)
+	/**
+	 * Constructor
+	 * @param deName The dice's name
+	 * @throws IllegalArgumentException See exercice1.De.setNbFaces()
+	 */
+	public De(String deName) throws IllegalArgumentException
 	{ this(DEFAULT_FACES, deName); }
 
-	public De(int faces, String deName)
+	/**
+	 * Constructor
+	 * @param faces The faces count
+	 * @param deName the dice name
+	 * @throws IllegalArgumentException See exercice1.De.setNbFaces()
+	 */
+	public De(int faces, String deName) throws IllegalArgumentException
 	{
 		De.nbrInstances++;
 		this.setNbFaces(faces);
@@ -33,7 +44,7 @@ public class De {
 		if(deName != null && deName.length() > 0)
 			this.nom = deName;
 		else
-			this.nom = "Dé n°" + De.nbrInstances;
+			this.nom = "DÃ© nÂ°" + De.nbrInstances;
 	}
 	
 	/*** GETTEURS STATIC ***/
@@ -48,18 +59,27 @@ public class De {
 	{ return this.nbFaces; }
 	
 	/*** SETTEURS ***/
-	public void setNbFaces(int faces)
+	/**
+	 * Set the number of faces
+	 * @param faces The face count
+	 * @throws IllegalArgumentException if the face count is not between
+	 * MIN_FACES & MAX_FACES
+	 */
+	public void setNbFaces(int faces) throws IllegalArgumentException
 	{
 		if(faces >= De.MIN_FACES && faces <= De.MAX_FACES)
 			this.nbFaces = faces;
 		else
-			System.err.println("Le nombre de faces est invalide");
+			throw new IllegalArgumentException("Le nombre de faces du dÃ©s doit"+
+				" Ãªtre compris entre " + De.MIN_FACES + " et " + De.MAX_FACES);
 	}
 	
 	/*** METHODS ***/
+	@Override
 	public String toString()
-	{ return "Le Dé \"" + this.nom + "\" posséde " + this.nbFaces + " faces"; }
+	{ return "Le DÃ© \"" + this.nom + "\" possÃ©de " + this.nbFaces + " faces"; }
 	
+	@Override
 	public boolean equals(Object obj)
 	{
 		boolean eval;
@@ -77,11 +97,18 @@ public class De {
 		return eval;
 	}
 	
+	/**
+	 * Make a launch
+	 * @return The launch result
+	 */
 	public int lancer()
-	{
-		return De.r.nextInt(this.nbFaces) + 1;
-	}
+	{ return De.r.nextInt(this.nbFaces) + 1; }
 	
+	/**
+	 * Make nb launch
+	 * @param nb Number of launch
+	 * @return The best result of the launchs
+	 */
 	public int lancer(int nb)
 	{
 		int meilleur = 0;

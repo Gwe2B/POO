@@ -2,6 +2,10 @@ package root.exo1;
 
 import java.util.ArrayList;
 
+/**
+ * @author Gwenaël
+ * @version 1.0
+ */
 public class ConcreteStackList implements AStack {
 /* --------------------------- Instance attributes -------------------------- */
     private ArrayList<Object> pile;
