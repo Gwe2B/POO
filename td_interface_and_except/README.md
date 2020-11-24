@@ -23,10 +23,10 @@
    ```
    Which of the following methods would be legal (individually) at line 2 in class Test2 ?
 
-   A. `float aMethod(float a, float b) { }`
-   B. `public int aMethod(int a, int b) throws Exception{ }`
-   C. `public float aMethod(float a, float b) throws _Exception { }`
-   D. `public float aMethod(float p, float q) { }`
+   - [ ] `float aMethod(float a, float b) { }`
+   - [ ] `public int aMethod(int a, int b) throws Exception{ }`
+   - [ ] `public float aMethod(float a, float b) throws _Exception { }`
+   - [ ] `public float aMethod(float p, float q) { }`
 
 2. Quelle sera la sortie si vous compilez et exécutez ce code, sachant qu'il n'existe pas de fichier nommé Hello.txt dans le répertoire courant ?
     ```java
@@ -53,10 +53,10 @@
     }
     ```
 
-    A. Fichier non trouvé,
-    B. Fichier non trouvé, -1
-    C. Fichier non trouvé, Exécution de finally, -1
-    D. 0
+    - [ ] Fichier non trouvé,
+    - [ ] Fichier non trouvé, -1
+    - [ ] Fichier non trouvé, Exécution de finally, -1
+    - [ ] 0
 
 3. Soit le code suivant:
     ```java
@@ -77,24 +77,30 @@
     ```
     Quel pourrait être le code de la méthode ioCall?
 
-    A. ```java
-    public void ioCall() throws IOException{
-        DataInputStream din = new DataInputStream(System.in);
-        din.readChar();
-    }
-    ```
-    B. ```java
-    public void ioCall() throw IOException{
-        DataInputStream din = new DataInputStream(System.in);
-        din.readChar();
-    }
-    ```
-    C. ```java
-    public void ioCall(){
-        DataInputStream din = new DataInputStream(System.in);
-        din.readChar();
-    }
-    ```
+    - [ ] 
+
+        ```java
+        public void ioCall() throws IOException{
+            DataInputStream din = new DataInputStream(System.in);
+            din.readChar();
+        }
+        ```
+    - [ ] 
+
+        ```java
+        public void ioCall() throw IOException{
+            DataInputStream din = new DataInputStream(System.in);
+            din.readChar();
+        }
+        ```
+    - [ ] 
+    
+        ```java
+        public void ioCall(){
+            DataInputStream din = new DataInputStream(System.in);
+            din.readChar();
+        }
+        ```
     
 4. Soit le code suivant :
     ```java
@@ -124,6 +130,10 @@
 
     Quelle sera la sortie écran?
 
+    <div style="font-family: 'fira code retina'; color: blue; width: 100%; padding: 0.5em; border: none; border-radius: 0.25rem; background-color: #F5F5F5;">
+    Réponse
+    </div>
+
 5. Cette construction de code est elle correcte ?
     ```java
     try {
@@ -140,6 +150,9 @@
     }
     ```
     Est-ce judicieux d'écrire ce genre de catch?
+    <div style="font-family: 'fira code retina'; color: blue; width: 100%; padding: 0.5em; border: none; border-radius: 0.25rem; background-color: #F5F5F5;">
+    Réponse
+    </div>
 
 7. Quelles sont les exceptions qui peuvent être interceptées par le code suivant ?
     ```java
@@ -150,6 +163,9 @@
     }
     ```
     Ce code est-il valide? Va-t-il compiler?
+    <div style="font-family: 'fira code retina'; color: blue; width: 100%; padding: 0.5em; border: none; border-radius: 0.25rem; background-color: #F5F5F5;">
+    Réponse
+    </div>
 
 8. Given the following method body:
     ```java
@@ -162,13 +178,13 @@
     }
     ```
     La méthode "unsafe" peut propager une exception AWTException (qui n'est pas une fille de RunTimeException). Quelle sera parmi les déclarations suivantes la déclaration pouvant correspondre à la méthode dont le code est donné ci-dessus ?
-    a. `public AWTException methodName()`
-    b. `public void methodName()`
-    c. `public void methodName() throw AWTException`
-    d. `public void methodName() throws AWTException`
-    e. `public void methodName() throws Exception`
+    - [ ] `public AWTException methodName()`
+    - [ ] `public void methodName()`
+    - [ ] `public void methodName() throw AWTException`
+    - [ ] `public void methodName() throws AWTException`
+    - [ ] `public void methodName() throws Exception`
 
-9. - Quel est le résultat de la compilation et exécution du code suivant (une ou plusieurs réponse(s))?
+9. Quel est le résultat de la compilation et exécution du code suivant (une ou plusieurs réponse(s))?
     ```java
     import java.io.*;
 
@@ -191,11 +207,11 @@
     }
     ```
 
-    a. Erreur de compilation
-    b. Pas d’erreur de compilation
-    c. Erreur à l’exécution
-    d. `MyMethod()` ne peut propager une `IOException` dans `MyExpr2`
-    e. `MyMethod()` doit propager les `IOExeption` et les EOFException dans `MyExpr1`
+    - [ ] Erreur de compilation
+    - [ ] Pas d’erreur de compilation
+    - [ ] Erreur à l’exécution
+    - [ ] `MyMethod()` ne peut propager une `IOException` dans `MyExpr2`
+    - [ ] `MyMethod()` doit propager les `IOExeption` et les EOFException dans `MyExpr1`
 
 10. Soit la hiérarchie de classes et le fragment de code suivant :
     ![Hierarchie](./img/q10.PNG)
@@ -219,19 +235,19 @@
     ```
     Quels seront le ou les messages affichés en sortie écran si une MalformedURLException est levée lors de la tentative de construction de l’URL à la ligne 3
 
-    a. Réussite
-    b. Mauvaise URL
-    c. Contenu de fichier incorrect
-    d. Exécution de la partie finally
-    e. On continue…
+    - [ ] Réussite
+    - [ ] Mauvaise URL
+    - [ ] Contenu de fichier incorrect
+    - [ ] Exécution de la partie finally
+    - [ ] On continue…
 
     En reprenant le même code et la même hiérarchie de classe que la question précédente, quels seront le ou les messages affichés en sortie écran si tout s’exécute normalement sans lever aucune exception ?
 
-    a. Réussite
-    b. Mauvaise URL
-    c. Contenu de fichier incorrect
-    d. Exécution de la partie finally
-    e. On continue…
+    - [ ] Réussite
+    - [ ] Mauvaise URL
+    - [ ] Contenu de fichier incorrect
+    - [ ] Exécution de la partie finally
+    - [ ] On continue…
 
 11. Quel est le résultat de la compilation et exécution du code
     ```java
@@ -246,10 +262,10 @@
     }
     ```
 
-    a. Affichage de « Finally »
-    b. Erreur de compilation
-    c. Erreur à l’exécution
-    d. Le code s’exécute sans affichage de sortie
+    - [ ] Affichage de « Finally »
+    - [ ] Erreur de compilation
+    - [ ] Erreur à l’exécution
+    - [ ] Le code s’exécute sans affichage de sortie
 
 12. Quel est le résultat de la compilation et exécution du code ci-dessous ?
     ```java
@@ -272,10 +288,10 @@
     }
     ```
 
-    a. Affichage de « ABCD »
-    b. Erreur de compilation
-    c. Affichage de « C » avant sortie sur une erreur
-    d. Affichage de « BC » avant sortie sur erreur d’exécution
+    - [ ] Affichage de « ABCD »
+    - [ ] Erreur de compilation
+    - [ ] Affichage de « C » avant sortie sur une erreur
+    - [ ] Affichage de « BC » avant sortie sur erreur d’exécution
 
 13. Quel est le résultat de la compilation et exécution du code ci-dessous ?
     ```java
@@ -301,7 +317,7 @@
     }
     ```
 
-    a. Affichage de « BD »
-    b. Affichage de « BCD »
-    c. Affichage de « BDE
-    d. Affichage de « BCDE » 
+    - [ ] Affichage de « BD »
+    - [ ] Affichage de « BCD »
+    - [ ] Affichage de « BDE
+    - [ ] Affichage de « BCDE » 
