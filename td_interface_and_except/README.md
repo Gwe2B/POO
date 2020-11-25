@@ -23,12 +23,12 @@
    ```
    Which of the following methods would be legal (individually) at line 2 in class Test2 ?
 
-   - [ ] `float aMethod(float a, float b) { }`
+   - [x] `float aMethod(float a, float b) { }`
    - [ ] `public int aMethod(int a, int b) throws Exception{ }`
    - [ ] `public float aMethod(float a, float b) throws _Exception { }`
-   - [ ] `public float aMethod(float p, float q) { }`
+   - [x] `public float aMethod(float p, float q) { }`
 
-2. Quelle sera la sortie si vous compilez et exécutez ce code, sachant qu'il n'existe pas de fichier nommé Hello.txt dans le répertoire courant ?
+2. Quelle sera la sortie si vous compilez et exécutez ce code, sachant qu'il n'existe pas de fichier nommé `Hello.txt` dans le répertoire courant ?
     ```java
     import java.io.*;
     public class Mine {
@@ -55,7 +55,7 @@
 
     - [ ] Fichier non trouvé,
     - [ ] Fichier non trouvé, -1
-    - [ ] Fichier non trouvé, Exécution de finally, -1
+    - [x] Fichier non trouvé, Exécution de finally, -1
     - [ ] 0
 
 3. Soit le code suivant:
@@ -77,7 +77,7 @@
     ```
     Quel pourrait être le code de la méthode ioCall?
 
-    - [ ] 
+    - [x] 
 
         ```java
         public void ioCall() throws IOException{
@@ -85,7 +85,7 @@
             din.readChar();
         }
         ```
-    - [ ] 
+    - [x] 
 
         ```java
         public void ioCall() throw IOException{
@@ -131,7 +131,8 @@
     Quelle sera la sortie écran?
 
     <div style="font-family: 'fira code retina'; color: blue; width: 100%; padding: 0.5em; border: none; border-radius: 0.25rem; background-color: #F5F5F5;">
-    Réponse
+    No Exception,
+    In finally clause
     </div>
 
 5. Cette construction de code est elle correcte ?
@@ -142,6 +143,9 @@
         ...
     }
     ```
+    <div style="font-family: 'fira code retina'; color: blue; width: 100%; padding: 0.5em; border: none; border-radius: 0.25rem; background-color: #F5F5F5;">
+    Oui, cependant elle va tout de même propager les exceptions qui apparaitrons dans le bloc try.
+    </div>
 
 6. Quelles sont les types d'exception qui peuvent être attrapées par ce `catch` ?
     ```java
@@ -151,7 +155,8 @@
     ```
     Est-ce judicieux d'écrire ce genre de catch?
     <div style="font-family: 'fira code retina'; color: blue; width: 100%; padding: 0.5em; border: none; border-radius: 0.25rem; background-color: #F5F5F5;">
-    Réponse
+    Toutes les Exceptions seront attrapé par ce bloc catch.
+    Il est judicieux d'utiliser ce genre de catch pour être sure de ne pas laisser filtrer d'exception à la seul conditions que ce soit la derniere clause catch.
     </div>
 
 7. Quelles sont les exceptions qui peuvent être interceptées par le code suivant ?
@@ -164,7 +169,7 @@
     ```
     Ce code est-il valide? Va-t-il compiler?
     <div style="font-family: 'fira code retina'; color: blue; width: 100%; padding: 0.5em; border: none; border-radius: 0.25rem; background-color: #F5F5F5;">
-    Réponse
+    Toutes les exceptions seront attrapé par le simple fait qu'elle hérite toutes de la classe Exception. La clause catch(ArithmeticException) quand à elle ne sera jamais éxécuter.
     </div>
 
 8. Given the following method body:
@@ -181,7 +186,7 @@
     - [ ] `public AWTException methodName()`
     - [ ] `public void methodName()`
     - [ ] `public void methodName() throw AWTException`
-    - [ ] `public void methodName() throws AWTException`
+    - [x] `public void methodName() throws AWTException`
     - [ ] `public void methodName() throws Exception`
 
 9. Quel est le résultat de la compilation et exécution du code suivant (une ou plusieurs réponse(s))?
@@ -236,18 +241,18 @@
     Quels seront le ou les messages affichés en sortie écran si une MalformedURLException est levée lors de la tentative de construction de l’URL à la ligne 3
 
     - [ ] Réussite
-    - [ ] Mauvaise URL
+    - [x] Mauvaise URL
     - [ ] Contenu de fichier incorrect
     - [ ] Exécution de la partie finally
     - [ ] On continue…
 
     En reprenant le même code et la même hiérarchie de classe que la question précédente, quels seront le ou les messages affichés en sortie écran si tout s’exécute normalement sans lever aucune exception ?
 
-    - [ ] Réussite
+    - [x] Réussite
     - [ ] Mauvaise URL
     - [ ] Contenu de fichier incorrect
-    - [ ] Exécution de la partie finally
-    - [ ] On continue…
+    - [x] Exécution de la partie finally
+    - [x] On continue…
 
 11. Quel est le résultat de la compilation et exécution du code
     ```java
@@ -262,7 +267,7 @@
     }
     ```
 
-    - [ ] Affichage de « Finally »
+    - [x] Affichage de « Finally »
     - [ ] Erreur de compilation
     - [ ] Erreur à l’exécution
     - [ ] Le code s’exécute sans affichage de sortie
@@ -317,7 +322,7 @@
     }
     ```
 
-    - [ ] Affichage de « BD »
+    - [x] Affichage de « BD »
     - [ ] Affichage de « BCD »
     - [ ] Affichage de « BDE
     - [ ] Affichage de « BCDE » 

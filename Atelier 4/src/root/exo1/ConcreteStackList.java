@@ -46,9 +46,9 @@ public class ConcreteStackList implements AStack {
     public Object pop() {
         Object retour = null;
         if(!this.isEmpty())
-        {
             retour = pile.remove(pile.size() - 1);
-        }
+        else
+            retour = null;
 
         return retour;
     }
