@@ -1,4 +1,4 @@
-package com;
+package com.exo1;
 
 public class MonTableau implements EstComparable {
 
@@ -21,9 +21,9 @@ public class MonTableau implements EstComparable {
 
         for(int el : this.array)
             bufArray += el;
-            
+
         if(obj == null)
-            throw new NullPointerException();
+            throw new NullPointerException("La variable obj cannot be null");
         else if(obj instanceof MonTableau) {
             for(int el : ((MonTableau)obj).array)
                 bufObj += el;
@@ -31,7 +31,7 @@ public class MonTableau implements EstComparable {
             for(int el : (int[])obj)
                 bufObj += el;
         } else
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("Icompatible obj type");
 
         if(bufArray < bufObj)
             result = -1;

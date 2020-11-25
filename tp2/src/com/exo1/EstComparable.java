@@ -1,4 +1,4 @@
-package com;
+package com.exo1;
 
 public interface EstComparable {
     /**

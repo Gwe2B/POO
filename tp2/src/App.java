@@ -1,4 +1,4 @@
-import com.MonTableau;
+import com.exo1.MonTableau;
 
 public class App {
     public static void main(String[] args) {
@@ -9,7 +9,7 @@ public class App {
 
         MonTableau m1=new MonTableau(a);
         MonTableau m2=new MonTableau(b);
-        
+
         System.out.println(m1.compareA(m2));
 
         System.out.println("=== Program stop ===");
