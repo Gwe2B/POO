@@ -3,7 +3,9 @@ package com.exo2;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
-public class Citerne{
+import com.exo1.EstComparable;
+
+public class Citerne implements EstComparable{
 
 /* ----------------------------- Class constants ---------------------------- */
     public static final int CAPACITE_MAX = 20000;
@@ -179,6 +181,39 @@ public class Citerne{
      */
     public int getStock()
     { return this.stock; }
+
+/* --------------------------- Interfaces methods --------------------------- */
+
+    /**
+     * Compare the instance to another object in capacity & quantity stored
+     * @param obj The object to compare with
+     * @return 1 if obj is greather than the instance, -1 if is smaller,
+     *  0 if equals
+     */
+    @Override
+    public int compareA(Object obj) {
+        int eval = 0;
+        
+        if(obj instanceof Citerne) {
+            Citerne hCiterne = (Citerne)obj;
+            
+            if(this.stock < hCiterne.stock)
+                eval = -1;
+            else if(this.stock > hCiterne.stock)
+                eval = 1;
+            else {
+                if(this.capacite < hCiterne.capacite)
+                    eval = -1;
+                else if(this.capacite > hCiterne.capacite)
+                    eval = 1;
+            }
+        }
+        else
+            throw new IllegalArgumentException(
+                "Le parametre n'est pas comparable");
+        
+        return eval;
+    }
 
 /* ------------------------ Object inherited methods ------------------------ */
 
