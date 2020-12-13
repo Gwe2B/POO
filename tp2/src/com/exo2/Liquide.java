@@ -11,7 +11,7 @@ public enum Liquide {//classse enumération des liquide
     /**
      * Constructor
      * @param nom The liquid's name
-     * @param temperature The liquid ideal conservation temperature
+     * @param temperature The liquid ideal conservation temperature in °C
      */
     private Liquide(String nom, int temperature) {
         this.nom = nom;
@@ -36,5 +36,5 @@ public enum Liquide {//classse enumération des liquide
 /* ------------------------ Object inherited methods ------------------------ */
     @Override
     public String toString()
-    { return "le nom du liquide est : " + nom; }
+    { return "Liquide est : " + nom + ", température idéal: " + temperature + "°C"; }
 }

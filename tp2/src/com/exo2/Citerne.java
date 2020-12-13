@@ -19,9 +19,9 @@ public class Citerne implements EstComparable{
     public final int capacite;
 
 /* --------------------------- Instance attributes -------------------------- */
-    private boolean flag_nettoyage = true;
-    private Liquide liquide;
-    private int stock;
+    protected Liquide liquide;
+    protected boolean flag_nettoyage = true;
+    protected int stock;
 
 /* ------------------------------ Constructors ------------------------------ */
     
@@ -160,9 +160,10 @@ public class Citerne implements EstComparable{
             this.stock -= qty;
         else
         {
+            qty -= this.stock;
             this.stock = 0;
             throw new IllegalArgumentException(
-                ((this.stock + qty) - this.capacite) + " m^3 manquant pour satisfaire." +
+                qty + " m^3 manquant pour satisfaire." +
                 "La cuve à été entierrement vidé."
             );
         }
@@ -244,7 +245,7 @@ public class Citerne implements EstComparable{
         return "Citerne n°" + this.identifiantCiterne +
         ", " + this.liquide + ", capacité: " + this.capacite + " m3, " + 
         "mise en service: " + this.creation.format(formatter) + ", volume occupé: " +
-        this.capacite + " m3";
+        this.stock + " m3";
     }
 
 /* ------------------------------ Class mathods ----------------------------- */
