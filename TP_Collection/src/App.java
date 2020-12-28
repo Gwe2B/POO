@@ -1,16 +1,17 @@
-import java.io.FileNotFoundException;
 import java.util.*;
 import com.exo1.*;
 import com.exo2.*;
 import com.exo3.*;
-import com.exo4.WordSort;
+import com.exo4.*;
+import com.exo5.*;
 
 public class App {
     public static void main(String[] args) throws Exception {
         // App.exo1()
         // App.exo2()
         // App.exo3()
-        App.exo4();
+        // App.exo4();
+        App.exo5();
     }
 
     public static void exo1() {
@@ -76,5 +77,23 @@ public class App {
                 System.err.println("Algo inconnue!!");
                 break;
         }
+    }
+
+    public static void exo5() {
+        Personne a = new Personne("GUIRAUD", "Gwe", 23, 05, 2000, 0, "", "", "");
+        Personne b = new Personne("GUIRAUD", "Maelle", 18, 12, 2002, 0, "", "", "");
+        Personne c = new Personne("GUIRAUD", "Maelis", 10, 05, 2008, 0, "", "", "");
+        Personne d = new Personne("GUIRAUD", "Toto", 10, 05, 2008, 0, "", "", "");
+        Personne e = new Personne("GUIRAUD", "Tata", 10, 05, 2008, 0, "", "", "");
+
+        System.out.println("a.compareTo(b) = " + a.compareTo(b));
+        System.out.println("b.compareTo(c) = " + b.compareTo(c));
+        System.out.println("c.compareTo(a) = " + c.compareTo(a));
+        System.out.println("c.compareTo(b) = " + c.compareTo(b));
+        System.out.println("c.compareTo(c) = " + c.compareTo(c));
+
+        System.out.println("c.compareTo(d) = " + c.compareTo(d));
+        System.out.println("c.compareTo(e) = " + c.compareTo(e));
+        System.out.println("d.compareTo(e) = " + d.compareTo(e));
     }
 }
