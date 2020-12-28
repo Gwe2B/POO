@@ -7,11 +7,11 @@ import com.exo5.*;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        // App.exo1()
-        // App.exo2()
-        // App.exo3()
+        // App.exo1();
+        App.exo2();
+        // App.exo3();
         // App.exo4();
-        App.exo5();
+        // App.exo5();
     }
 
     public static void exo1() {
@@ -30,7 +30,12 @@ public class App {
     }
 
     public static void exo2() {
-        Anagramme an = new Anagramme("dictionary.txt", 2);
+        /**
+         * Pour faciliter le debuggage nous avons décider d'utiliser une version
+         * alléger du fichier fournit se limittant aux 5 000 premieres lignes.
+         */
+        Anagramme an = new Anagramme("dictionary_new.txt", 2);
+        System.out.println(an.getAnagrammes());
     }
 
     public static void exo3() {

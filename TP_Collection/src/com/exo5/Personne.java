@@ -2,7 +2,7 @@ package com.exo5;
 
 import java.util.*;
 
-public class Personne implements Comparable {
+public class Personne implements Comparable<Personne> {
 	/*** CST de classe ***/
     private static final Adresse ADRESSE_INCONNUE = null;
     
@@ -138,22 +138,17 @@ public class Personne implements Comparable {
 /* ----------------- Inherited Comparable interface methods ----------------- */
 
 	@Override
-	public int compareTo(Object o) {
+	public int compareTo(Personne o) {
 		int result = 0;
 
-		if(!(o instanceof Personne))
-			throw new IllegalArgumentException("Unvalid Object");
+		if(o.dateNaissance.compareTo(this.dateNaissance) > 0)
+			result = 1;
+		else if(o.dateNaissance.compareTo(this.dateNaissance) < 0)
+			result = -1;
 		else {
-			Personne buf = (Personne)o;
-			if(buf.dateNaissance.compareTo(this.dateNaissance) > 0)
-				result = 1;
-			else if(buf.dateNaissance.compareTo(this.dateNaissance) < 0)
-				result = -1;
-			else {
-				result = this.nom.compareTo(buf.nom);
-				if(result == 0)
-					result = this.prenom.compareTo(buf.prenom);
-			}
+			result = this.nom.compareTo(o.nom);
+			if(result == 0)
+				result = this.prenom.compareTo(o.prenom);
 		}
 
 		return result;
